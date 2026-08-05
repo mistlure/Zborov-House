@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using API.Data;
-
+using Microsoft.OpenApi.Models;
 namespace API
 {
     public class Program
@@ -14,8 +14,44 @@ namespace API
 
             builder.Services.AddControllers();
             
+
+
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options =>
+            {
+                options.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
+                {
+                    Name = "X-Api-Key",
+
+                    In = ParameterLocation.Header,
+
+                    Type = SecuritySchemeType.ApiKey,
+
+                    Description = "API key?",
+
+                    Scheme = "ApiKeyScheme"
+                });
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "ApiKey"
+                            },
+                            Scheme = "oauth2",
+                            Name = "ApiKey",
+                            In = ParameterLocation.Header
+                        },
+                    new List<string>()
+                    }
+                });
+             });
+
+
 
             var app = builder.Build();
 

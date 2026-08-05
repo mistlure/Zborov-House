@@ -3,6 +3,7 @@ using API.DTOs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using API.Models;
+using API.Filters;
 
 namespace API.Controllers
 {
@@ -48,6 +49,7 @@ namespace API.Controllers
 
 
 
+        [ApiKeyAuth]
         [HttpPost]
         public async Task<ActionResult<PostDTO>> CreatePost(CreatePostDTO dto)
         {
@@ -64,6 +66,7 @@ namespace API.Controllers
 
 
 
+        [ApiKeyAuth]
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdatePost(Guid id, CreatePostDTO dto)
         {
@@ -86,6 +89,7 @@ namespace API.Controllers
 
 
 
+        [ApiKeyAuth]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePost(Guid id)
         {
