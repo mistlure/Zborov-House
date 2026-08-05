@@ -13,7 +13,19 @@ namespace API
                 options.UseSqlite("Data Source=zborov.db"));
 
             builder.Services.AddControllers();
-            
+
+
+
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+            });
+
 
 
             builder.Services.AddEndpointsApiExplorer();
@@ -65,8 +77,9 @@ namespace API
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseCors("AllowAll");
 
+            app.UseAuthorization();
 
             app.MapControllers();
 
