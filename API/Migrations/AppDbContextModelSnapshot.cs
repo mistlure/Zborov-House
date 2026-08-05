@@ -19,9 +19,9 @@ namespace API.Migrations
 
             modelBuilder.Entity("API.Models.Post", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Content")
                         .IsRequired()
@@ -31,6 +31,9 @@ namespace API.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PictureUrl")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("PublishDate")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
