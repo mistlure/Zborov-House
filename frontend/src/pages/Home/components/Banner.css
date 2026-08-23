@@ -1,0 +1,128 @@
+.hero-split {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    cursor: ew-resize;
+    margin-top: 0;
+}
+
+.split-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+    .split-layer.present {
+        background-image: url('/images/present.jpg');
+    }
+
+        .split-layer.present::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+        }
+
+    .split-layer.past {
+        background-image: url('/images/past.jpg');
+        filter: grayscale(100%) sepia(20%);
+    }
+
+        .split-layer.past::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+        }
+
+.layer-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index: 2;
+    width: 300px;
+    pointer-events: none;
+}
+
+    .layer-content.left-align {
+        left: 8%;
+    }
+
+    .layer-content.right-align {
+        right: 8%;
+        text-align: right;
+    }
+
+    .layer-content h2 {
+        font-size: 2.5rem;
+        margin: 0 0 10px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    .layer-content p {
+        font-size: 1rem;
+        margin: 0;
+        color: var(--topbar-text);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+.split-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    z-index: 10;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.handle-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: var(--topbar-text);
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+.hero-center-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    text-align: center;
+    pointer-events: none;
+}
+
+    .hero-center-title h1 {
+        font-size: clamp(4rem, 8vw, 7rem);
+        color: #ffffff;
+        margin: 0;
+        line-height: 1.1;
+        text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+.hero-fade-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.9));
+    z-index: 20;
+    pointer-events: none;
+}

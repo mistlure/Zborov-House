@@ -1,0 +1,54 @@
+.partners-thanks-section {
+    width: 100%;
+    background-color: #f7f8f5;
+    padding: 45px 40px;
+    border-top: 1px solid #e2e5dc;
+    display: flex;
+    justify-content: center;
+}
+
+.thanks-container {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.thanks-line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--topbar-text);
+}
+
+.thanks-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.thanks-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #777777;
+    font-weight: 600;
+}
+
+.thanks-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.thanks-content p {
+    font-size: 0.95rem;
+    color: #555555;
+    margin: 0;
+    max-width: 550px;
+    line-height: 1.6;
+}

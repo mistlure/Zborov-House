@@ -1,0 +1,147 @@
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--topbar-bg);
+    height: 45px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 900;
+}
+
+    .top-bar.hidden {
+        transform: translateY(-100%);
+    }
+
+    .top-bar.visible {
+        transform: translateY(0);
+    }
+
+.top-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.top-bar-left, .top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.social-link, .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--topbar-text);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s, border-bottom 0.2s;
+    border-bottom: 1px solid transparent;
+}
+
+    .contact-link:hover {
+        border-bottom: 1px solid var(--topbar-text);
+    }
+
+    .social-link:hover {
+        opacity: 0.7;
+    }
+
+.main-nav {
+    position: fixed;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: top 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+    .main-nav.shifted {
+        top: 0;
+    }
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 40px;
+}
+
+.logo-box {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 8px 18px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: color 0.3s ease;
+    cursor: default;
+}
+
+    .logo-box:hover {
+        color: var(--topbar-text);
+    }
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+    .nav-links a {
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: color 0.2s;
+    }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--topbar-text);
+        }
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.burger-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+    .burger-lines span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: #111;
+        transition: 0.2s;
+    }
