@@ -6,7 +6,8 @@ namespace API.DTOs
     {
         public string Title { get; set; } = string.Empty;
         public string Content { get; set; } = string.Empty;
-        public string? PictureUrl { get; set; }
+        public string? BannerImageUrl { get; set; }
+        public List<string> GalleryImages { get; set; } = new List<string>();
         public DateTime? PublishDate { get; set; }
 
         public Post ToPost()
@@ -15,11 +16,10 @@ namespace API.DTOs
             {
                 Title = this.Title,
                 Content = this.Content,
-                PictureUrl = this.PictureUrl,
+                BannerImageUrl = this.BannerImageUrl,
+                GalleryImages = this.GalleryImages ?? new List<string>(),
                 PublishDate = this.PublishDate ?? DateTime.UtcNow
             };
         }
-
-
     }
 }

@@ -1,0 +1,310 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60f,400;0,8..60f,600;1,8..60f,400&display=swap');
+
+.single-post-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding-bottom: 120px;
+    font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.post-header-image {
+    width: 100%;
+    max-width: 980px;
+    margin: 50px auto 0;
+    height: 460px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    border: 1px solid var(--topbar-text);
+    background-color: #ffffff;
+    box-shadow: none;
+}
+
+    .post-header-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+.post-content-container {
+    max-width: 960px;
+    margin: 50px auto 40px;
+    padding: 0 30px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.post-publish-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--topbar-text);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--topbar-text);
+}
+
+.post-content-container h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.3rem;
+    color: #1b4d31;
+    margin: 0 0 30px 0;
+    line-height: 1.25;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.post-full-text p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.16rem;
+    color: #265c3d;
+    line-height: 1.85;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.post-gallery-section {
+    max-width: 1100px;
+    margin: 60px auto 0;
+    padding: 0 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 0;
+    background-color: #f4f4f4;
+}
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 0.3s ease;
+    }
+
+        .gallery-item img:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+.post-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    font-size: 1rem;
+    color: var(--topbar-text);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 1000px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .post-header-image {
+        height: 350px;
+        max-width: 100%;
+        margin-top: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-content-container {
+        padding: 0 20px;
+    }
+
+        .post-content-container h1 {
+            font-size: 1.8rem;
+        }
+}
+
+@media (max-width: 500px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60f,400;0,8..60f,600;1,8..60f,400&display=swap');
+
+.single-post-page {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding-top: 140px;
+    padding-bottom: 120px;
+    font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.post-content-container {
+    max-width: 960px;
+    margin: 50px auto 40px;
+    padding: 0 30px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.post-publish-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--topbar-text);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--topbar-text);
+}
+
+.post-content-container h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.3rem;
+    color: #1b4d31;
+    margin: 0 0 30px 0;
+    line-height: 1.25;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.post-full-text p {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.16rem;
+    color: #265c3d;
+    line-height: 1.85;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.steam-gallery-container {
+    max-width: 960px;
+    margin: 40px auto 0;
+    padding: 0 30px;
+}
+
+.steam-main-screen {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background-color: #111d15;
+    border: 1px solid var(--topbar-text);
+    overflow: hidden;
+}
+
+    .steam-main-screen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+.steam-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(27, 77, 49, 0.8);
+    color: #ffffff;
+    border: none;
+    width: 45px;
+    height: 60px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .steam-arrow:hover {
+        background-color: var(--topbar-text);
+    }
+
+.steam-prev {
+    left: 0;
+}
+
+.steam-next {
+    right: 0;
+}
+
+.steam-strip {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.steam-thumb {
+    width: 110px;
+    height: 70px;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: 2px solid transparent;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+    background-color: #111d15;
+    overflow: hidden;
+}
+
+    .steam-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .steam-thumb:hover {
+        opacity: 0.9;
+    }
+
+    .steam-thumb.active {
+        border-color: var(--topbar-text);
+        opacity: 1;
+    }
+
+.post-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    font-size: 1rem;
+    color: var(--topbar-text);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+    .steam-main-screen {
+        height: 320px;
+    }
+
+    .post-content-container, .steam-gallery-container {
+        padding: 0 20px;
+    }
+
+        .post-content-container h1 {
+            font-size: 1.8rem;
+        }
+}

@@ -79,7 +79,8 @@ namespace API.Controllers
 
             post.Title = dto.Title;
             post.Content = dto.Content;
-            post.PictureUrl = dto.PictureUrl;
+            post.BannerImageUrl = dto.BannerImageUrl;
+            post.GalleryImages = dto.GalleryImages ?? new List<string>();
             post.PublishDate = dto.PublishDate ?? post.PublishDate;
 
             await _context.SaveChangesAsync();
