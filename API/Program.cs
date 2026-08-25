@@ -18,9 +18,9 @@ namespace API
 
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy("AllowAll", policy =>
+                options.AddPolicy("AllowReact", policy =>
                 {
-                    policy.AllowAnyOrigin()
+                    policy.WithOrigins("http://localhost:5173", "http://127.0.0.1:5173")
                           .AllowAnyHeader()
                           .AllowAnyMethod();
                 });
@@ -67,7 +67,7 @@ namespace API
 
             var app = builder.Build();
 
-
+            app.UseCors("AllowReact");
 
             if (app.Environment.IsDevelopment())
             {
