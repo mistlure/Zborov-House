@@ -1,5 +1,4 @@
-﻿// src/components/layout/Header.jsx
-import './Header.css';
+﻿import './Header.css';
 import React, { useState, useEffect } from 'react';
 
 function Header({ onOpenMenu }) {
@@ -7,27 +6,13 @@ function Header({ onOpenMenu }) {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY < 50) {
-                setIsTopBarVisible(true);
-            } else {
-                setIsTopBarVisible(false);
-            }
-        };
-
-        const handleMouseMove = (e) => {
-            if (e.clientY < 60) {
-                setIsTopBarVisible(true);
-            } else if (window.scrollY >= 50) {
-                setIsTopBarVisible(false);
-            }
+            setIsTopBarVisible(window.scrollY < 50);
         };
 
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('mousemove', handleMouseMove);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('mousemove', handleMouseMove);
         };
     }, []);
 
