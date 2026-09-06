@@ -77,6 +77,8 @@ namespace API
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseCors("AllowAll");
 
             app.UseAuthorization();
