@@ -71,7 +71,7 @@ export default function PostPage() {
             .then(data => {
                 setPost(data);
             })
-            .catch(error => console.error('Ошибка при загрузке поста:', error));
+            .catch(error => console.error('Post loading error:', error));
     }, [id]);
 
     if (!post) {
@@ -83,10 +83,16 @@ export default function PostPage() {
     }
 
     const allImages = [];
-    if (post.bannerImageUrl) allImages.push(post.bannerImageUrl);
-    if (post.galleryImages && post.galleryImages.length > 0) {
-        allImages.push(...post.galleryImages);
+    if (post.bannerImageUrl && post.bannerImageUrl.trim() !== '') {
+        allImages.push(post.bannerImageUrl);
     }
+
+    if (post.galleryImages && post.galleryImages.length > 0) {
+        const validGallery = post.galleryImages.filter(img => img && img.trim() !== '');
+        allImages.push(...validGallery);
+    }
+
+
 
     const currentMainImage = allImages.length > 0 ? allImages[activeImageIndex] : null;
 

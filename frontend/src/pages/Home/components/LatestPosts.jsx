@@ -1,4 +1,5 @@
 ﻿import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // SPA
 import './LatestPosts.css';
 
 export default function LatestPosts() {
@@ -27,20 +28,36 @@ export default function LatestPosts() {
 
                 <div className="posts-grid">
                     {posts.map((post) => (
-                        <a key={post.id} href={`/post/${post.id}`} className="post-card">
+                        <Link key = { post.id } to = {`/post/${post.id}`} className="post-card">
+
                             <div className="post-image-wrap">
-                                <img src={post.pictureUrl || '/images/cemetary.jpg'} alt={post.title} />
+                                <img
+                                    src={post.bannerImageUrl || '/images/empty.jpg'}
+                                    alt={post.title}
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = '/images/empty.jpg';
+                                    }}
+                                />
                             </div>
-                            <div className="post-content">
-                                <span className="post-date">
-                                    {new Date(post.publishDate).toLocaleDateString('cs-CZ')}
-                                </span>
-                                <h3>{post.title}</h3>
-                                <p>{post.content}</p>
-                            </div>
-                        </a>
+
+                    <div className="post-content">
+                        <span className="post-date">
+                            {new Date(post.publishDate).toLocaleDateString('cs-CZ')}
+                        </span>
+                        <h3>{post.title}</h3>
+                        <p>{post.content}</p>
+                    </div>
+
+                </Link>
                     ))}
-                </div>
+
+                    <div className="latest-posts-action">
+                        <Link to="/blog" className="strict-btn">
+                            Všechny články
+                        </Link>
+                    </div>
+            </div>
             </div>
         </section>
     );
