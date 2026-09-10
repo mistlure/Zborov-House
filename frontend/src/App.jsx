@@ -8,6 +8,7 @@ import Footer from './components/layout/Footer';
 import Home from './pages/Home/Home';
 import PostPage from './pages/Post/PostPage';
 import Blog from './pages/Blog/Blog';
+import About from './pages/About/About';
 
 function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/post/:id" element={<PostPage />} />
                     <Route path="/blog" element={<Blog />} />
+                    <Route path="/about" element={<About />} />
                 </Routes>
             </div>
 
