@@ -7,6 +7,7 @@ import SideMenu from './components/layout/SideMenu';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home/Home';
 import PostPage from './pages/Post/PostPage';
+import Blog from './pages/Blog/Blog';
 
 function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,6 +22,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/post/:id" element={<PostPage />} />
+                    <Route path="/blog" element={<Blog />} />
                 </Routes>
             </div>
 

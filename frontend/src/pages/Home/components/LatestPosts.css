@@ -8,9 +8,17 @@
 
     .title-decorator span {
         flex: 1;
-        height: 1px;
+        height: 2px;
         background-color: var(--topbar-text);
         max-width: 120px;
+    }
+
+    .title-decorator h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin: 0;
+        letter-spacing: 0.5px;
     }
 
 .latest-posts-section {
