@@ -1,6 +1,7 @@
 ﻿// src/components/layout/Footer.jsx
 import './Footer.css'
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -52,7 +53,7 @@ function Footer() {
                     <p>&copy; {new Date().getFullYear()} Pamětní dům Zborov. Všechna práva vyhrazena.</p>
 
                     <div className="footer-bottom-links">
-                        <a href="#">Ochrana osobních údajů</a>
+                        <Link to="/privacy">Ochrana osobních údajů</Link>
                     </div>
 
                 </div>

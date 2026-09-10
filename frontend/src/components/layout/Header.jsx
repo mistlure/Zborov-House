@@ -1,5 +1,6 @@
 ﻿import './Header.css';
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Header({ onOpenMenu }) {
     const [isTopBarVisible, setIsTopBarVisible] = useState(true);
@@ -58,13 +59,20 @@ function Header({ onOpenMenu }) {
             {/* Main */}
             <header className={`main-nav ${!isTopBarVisible ? 'shifted' : ''}`}>
                 <div className="nav-content">
-                    <div className="logo-box">Zborov</div>
+
+                    <div className="logo-box">
+                        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                            Zborov
+                        </Link>
+                    </div>
+
                     <div className="nav-right">
                         <nav className="nav-links">
-                            <a href="#" className="active">Úvod</a>
-                            <a href="#">Blog</a>
-                            <a href="#">O projektu</a>
+                                <Link to="/" className="active">Úvod</Link>
+                                <Link to="/blog">Blog</Link>
+                                <Link to="/about">O projektu</Link>
                         </nav>
+
                         <button className="menu-btn" onClick={onOpenMenu}>
                             <span className="burger-lines">
                                 <span></span>

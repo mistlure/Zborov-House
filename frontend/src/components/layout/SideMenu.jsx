@@ -1,6 +1,7 @@
 ﻿// src/components/layout/SideMenu.jsx
 import './SideMenu.css'
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SideMenu({ isOpen, onClose }) {
     return (
@@ -16,18 +17,21 @@ function SideMenu({ isOpen, onClose }) {
                 </button>
 
                 <nav className="side-nav-links">
-                    <a href="#" className="active">Úvod</a>
-                    <a href="#">Blog</a>
-                    <a href="#">O projektu</a>
-                    <a href="#">Projektový team</a>
-                    <a href="#">Partneři projektu</a>
-                    <a href="#">Milníky projektu</a>
-                    <a href="#">Historie místa</a>
-                    <a href="#">Napsali o nás</a>
-                    <a href="#">Fotogalerie</a>
+                    <Link to="/" className="active" onClick={onClose}>Úvod</Link>
+                    <Link to="/blog" onClick={onClose}>Blog</Link>
+                    <Link to="/about" onClick={onClose}>O projektu</Link>
+
+                    <Link to="/team" onClick={onClose}>Projektový team</Link>
+                    <Link to="/partners" onClick={onClose}>Partneři projektu</Link>
+                    <Link to="/milestones" onClick={onClose}>Milníky projektu</Link>
+                    <Link to="/history" onClick={onClose}>Historie místa</Link>
+                    <Link to="/media" onClick={onClose}>Napsali o nás</Link>
+                    <Link to="/gallery" onClick={onClose}>Fotogalerie</Link>
+
                     <div className="nav-divider"></div>
-                    <a href="#" className="sub-link">Seznam dárců</a>
-                    <a href="#" className="sub-link">Kontakt</a>
+
+                    <Link to="/donors" className="sub-link" onClick={onClose}>Seznam dárců</Link>
+                    <Link to="/contact" className="sub-link" onClick={onClose}>Kontakt</Link>
                 </nav>
 
             </div>
