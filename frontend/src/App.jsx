@@ -10,6 +10,7 @@ import PostPage from './pages/Post/PostPage';
 import Blog from './pages/Blog/Blog';
 import About from './pages/About/About';
 import Community from './pages/Community/Community';
+import Milestones from './pages/Milestones/Milestones';
 
 function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,6 +28,7 @@ function App() {
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/community" element={<Community />} />
+                    <Route path="/milestones" element={<Milestones />} />
                 </Routes>
             </div>
 
