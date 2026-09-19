@@ -1,5 +1,4 @@
-﻿// src/components/layout/SideMenu.jsx
-import './SideMenu.css'
+﻿import './SideMenu.css'
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -17,15 +16,24 @@ function SideMenu({ isOpen, onClose }) {
                 </button>
 
                 <nav className="side-nav-links">
-                    <Link to="/" className="active" onClick={onClose}>Úvod</Link>
+                    <Link to="/" onClick={onClose}>Úvod</Link>
                     <Link to="/blog" onClick={onClose}>Blog</Link>
                     <Link to="/about" onClick={onClose}>O projektu</Link>
 
-                    <Link to="/team" onClick={onClose}>Projektový team</Link>
-                    <Link to="/partners" onClick={onClose}>Partneři projektu</Link>
+                    <div className="nav-accordion">
+                        <Link to="/community" state={{ tab: 'team' }} onClick={onClose}>
+                            Společenství
+                        </Link>
+
+                        <div className="accordion-body">
+                            <Link to="/community" state={{ tab: 'team' }} onClick={onClose} className="sub-link">Projektový tým</Link>
+                            <Link to="/community" state={{ tab: 'partners' }} onClick={onClose} className="sub-link">Partneři projektu</Link>
+                            <Link to="/community" state={{ tab: 'media' }} onClick={onClose} className="sub-link">Napsali o nás</Link>
+                        </div>
+                    </div>
+
                     <Link to="/milestones" onClick={onClose}>Milníky projektu</Link>
                     <Link to="/history" onClick={onClose}>Historie místa</Link>
-                    <Link to="/media" onClick={onClose}>Napsali o nás</Link>
                     <Link to="/gallery" onClick={onClose}>Fotogalerie</Link>
 
                     <div className="nav-divider"></div>

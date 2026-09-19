@@ -1,9 +1,19 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Community.css';
 import Team from './components/Team/Team';
+import Partners from './components/Partners/Partners';
+import Media from './components/Media/Media';
 
 export default function Community() {
+    const location = useLocation();
     const [activeTab, setActiveTab] = useState('team');
+
+    useEffect(() => {
+        if (location.state && location.state.tab) {
+            setActiveTab(location.state.tab);
+        }
+    }, [location]);
 
     return (
         <div className="community-page">
@@ -18,38 +28,34 @@ export default function Community() {
                     <p className="community-subtitle">Lidé, partneři a instituce, kteří tvoří příběh Zborova</p>
                 </header>
 
-                <div className="community-tabs">
-                    <button
-                        className={`tab-btn ${activeTab === 'team' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('team')}
-                    >
-                        Projektový tým
-                    </button>
-                    <button
-                        className={`tab-btn ${activeTab === 'partners' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('partners')}
-                    >
-                        Partneři projektu
-                    </button>
-                    <button
-                        className={`tab-btn ${activeTab === 'media' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('media')}
-                    >
-                        Napsali o nás
-                    </button>
-                    <button
-                        className={`tab-btn ${activeTab === 'donors' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('donors')}
-                    >
-                        Seznam dárců
-                    </button>
+                <div className="community-tabs-wrapper">
+                    <div className={`community-tabs active-${activeTab}`}>
+                        <div className="tab-slider"></div>
+                        <button
+                            className={`tab-btn ${activeTab === 'team' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('team')}
+                        >
+                            Projektový tým
+                        </button>
+                        <button
+                            className={`tab-btn ${activeTab === 'partners' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('partners')}
+                        >
+                            Partneři projektu
+                        </button>
+                        <button
+                            className={`tab-btn ${activeTab === 'media' ? 'active' : ''}`}
+                            onClick={() => setActiveTab('media')}
+                        >
+                            Napsali o nás
+                        </button>
+                    </div>
                 </div>
 
-                <div className="community-content">
+                <div className="community-content" key={activeTab}>
                     {activeTab === 'team' && <Team />}
-                    {activeTab === 'partners' && <div className="tab-placeholder">Sekce Partneři...</div>}
-                    {activeTab === 'media' && <div className="tab-placeholder">Sekce Média...</div>}
-                    {activeTab === 'donors' && <div className="tab-placeholder">Sekce Dárci...</div>}
+                    {activeTab === 'partners' && <Partners />}
+                    {activeTab === 'media' && <Media />}
                 </div>
 
             </div>
